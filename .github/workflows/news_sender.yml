@@ -1,0 +1,41 @@
+name: Send News
+
+on:
+  schedule:
+    - cron: '0 1 * * *'   # 8:00 AM Việt Nam (UTC+7)
+    - cron: '0 7 * * *'   # 2:00 PM Việt Nam
+  workflow_dispatch:      # cho phép chạy tay
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run bot
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        run: python bot.py
+
+      - name: Commit and push sent_articles.json if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add sent_articles.json
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update sent articles [skip ci]"
+            git push
+          fi
