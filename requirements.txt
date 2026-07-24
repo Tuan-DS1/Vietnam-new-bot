@@ -1,0 +1,4 @@
+feedparser==6.0.10
+requests==2.31.0
+fuzzywuzzy==0.18.0
+python-Levenshtein==0.21.1
