@@ -3,7 +3,7 @@ from fuzzywuzzy import fuzz
 from datetime import datetime, timedelta
 
 TELEGRAM_TOKEN = os.environ['TELEGRAM_BOT_TOKEN']
-CHAT_ID = 'YOUR_CHAT_ID'  # Sẽ lấy tự động sau bước dưới
+CHAT_ID = '7463208687'  # Sẽ lấy tự động sau bước dưới
 SENT_FILE = 'sent_articles.json'
 
 # RSS feeds
