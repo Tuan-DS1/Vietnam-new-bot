@@ -68,9 +68,9 @@ def should_send_now():
     current_minute = vn_now.minute
 
     # Cho phép sai số tối đa 10 phút để cron kịp chạy
-    if current_hour == 8 and 0 <= current_minute <= 10:
+    if current_hour == 8 and 0 <= current_minute <= 60:
         return True
-    if current_hour == 14 and 0 <= current_minute <= 10:
+    if current_hour == 14 and 0 <= current_minute <= 60:
         return True
     return False
 
