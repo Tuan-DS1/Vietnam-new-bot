@@ -2,7 +2,7 @@ name: Send News
 
 on:
   schedule:
-    - cron: '*/30 * * * *'    # Chạy mỗi 30 phút
+    - cron: '*/120 * * * *'    # Chạy mỗi 30 phút
   workflow_dispatch:
 
 jobs:
