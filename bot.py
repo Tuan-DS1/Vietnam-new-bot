@@ -1,7 +1,7 @@
 import feedparser, requests, json, os, time
 from fuzzywuzzy import fuzz
 from datetime import datetime, timedelta
-
+print(f"Current UTC time: {datetime.utcnow().isoformat()}")
 TELEGRAM_TOKEN = os.environ['TELEGRAM_BOT_TOKEN']
 CHAT_ID = '7463208687'  # Sẽ lấy tự động sau bước dưới
 SENT_FILE = 'sent_articles.json'
