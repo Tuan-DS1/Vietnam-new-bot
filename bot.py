@@ -8,7 +8,7 @@ from datetime import datetime, timedelta, timezone
 
 # ========== CẤU HÌNH ==========
 TELEGRAM_TOKEN = os.environ['TELEGRAM_BOT_TOKEN']
-CHAT_ID = 'YOUR_CHAT_ID'   # Sẽ tự động lấy ở lần chạy đầu, sau đó cập nhật lại
+CHAT_ID = '7463208687'   # Sẽ tự động lấy ở lần chạy đầu, sau đó cập nhật lại
 SENT_FILE = 'sent_articles.json'
 
 # Danh sách RSS các báo Việt Nam
